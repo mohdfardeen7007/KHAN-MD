@@ -6,7 +6,7 @@ const axios = require('axios')
 
 cmd({
     pattern: "menu2",
-    alias: ["allmenu","fullmenu"],use: '.menu2',
+    alias: ["allmenu","fullmenu"],use: '.menu',
     desc: "menu the bot",
     category: "menu",
     react: "⚡",
@@ -317,20 +317,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
 
         await conn.sendMessage(
             from,
-            {
-                image: { url: `https://files.catbox.moe/7zfdcq.jpg` },
-                caption: dec,
-                contextInfo: {
-                    mentionedJid: [m.sender],
-                    forwardingScore: 999,
-                    isForwarded: true,
-                    forwardedNewsletterMessageInfo: {
-                        newsletterJid: '120363354023106228@newsletter',
-                        newsletterName: 'JawadTechX',
-                        serverMessageId: 143
-                    }
-                }
-            },
+            { image: { url: `https://files.catbox.moe/7zfdcq.jpg` },
             { quoted: mek }
         );
 
