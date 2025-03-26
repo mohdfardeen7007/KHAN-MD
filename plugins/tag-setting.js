@@ -1,18 +1,16 @@
-const config = require('../config')
-const { cmd, commands } = require('../command')
-const { getBuffer, getGroupAdmins, getRandom, h2k, isUrl, Json, runtime, sleep, fetchJson} = require('../lib/functions')
-
-cmd({
-    pattern: "tagall",
-    react: "🔊",
-    alias: ["gc_tagall"],
-    desc: "To Tag all Members",
-    category: "group",
-    use: '.tagall',
-    filename: __filename
-},
-async (conn, mek, m, { from, participants, reply, isGroup, senderNumber, groupAdmins, prefix, command }) => {
-    try {
+const { cmd } = require('../command');
+cmd(
+    {
+        pattern: 'tagall',
+        alias: ['tagall'],
+        desc: 'tag',
+        category: 'tagall',
+        use: '<reply media or URL>',
+        filename: __filename,
+    },
+    async (conn, mek, m, { quoted, args, q, reply, from }) => {
+            var { participants } = await conn.groupMetadata(from).catch(() => {});
+           
         if (!isGroup) return reply("❌ This command can only be used in groups.");
         
         const botOwner = conn.user.id.split(":")[0]; // Extract bot owner's number
