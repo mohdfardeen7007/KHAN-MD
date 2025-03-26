@@ -2,9 +2,9 @@ const { cmd } = require('../command');
 cmd(
     {
         pattern: 'tag',
-        alias: ['idk', 'stake'],
+        alias: ['tagall'],
         desc: 'tag',
-        category: 'sticker',
+        category: 'tagall',
         use: '<reply media or URL>',
         filename: __filename,
     },
