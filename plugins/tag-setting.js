@@ -11,7 +11,7 @@ cmd({
     use: '.tagall',
     filename: __filename
 },
-async (conn, mek, m, { from, participants, reply, isGroup, senderNumber, groupMembers, prefix, command }) => {
+async (conn, mek, m, { from, participants, reply, isGroup, senderNumber, groupadmins, prefix, command }) => {
     try {
         if (!isGroup) return reply("❌ This command can only be used in groups.");
         
