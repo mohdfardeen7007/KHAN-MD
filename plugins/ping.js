@@ -34,18 +34,6 @@ async (conn, mek, m, { from, quoted, sender, reply }) => {
 
         const text = `> *KHAN-MD SPEED: ${responseTime.toFixed(2)}ms ${reactionEmoji}*`;
 
-        await conn.sendMessage(from, {
-            text,
-            contextInfo: {
-                mentionedJid: [sender],
-                forwardingScore: 999,
-                isForwarded: true,
-                forwardedNewsletterMessageInfo: {
-                    newsletterJid: '120363354023106228@newsletter',
-                    newsletterName: "JawadTechX",
-                    serverMessageId: 143
-                }
-            }
         }, { quoted: mek });
 
     } catch (e) {
