@@ -37,13 +37,13 @@ async (conn, mek, m, { from, quoted, sender, reply }) => {
         await conn.sendMessage(from, {
             text,
             contextInfo: {
-                mentionedJid: [sender],
-                forwardingScore: 999,
+                mentionedJid: [],
+                forwardingScore: ,
                 isForwarded: true,
                 forwardedNewsletterMessageInfo: {
-                    newsletterJid: '120363354023106228@newsletter',
-                    newsletterName: "JawadTechX",
-                    serverMessageId: 143
+                    newsletterJid: '',
+                    newsletterName: "",
+                    serverMessageId: 
                 }
             }
         }, { quoted: mek });
