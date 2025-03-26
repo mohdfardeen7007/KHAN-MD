@@ -8,7 +8,7 @@ cmd({
   react: '⚡',
   desc: "Download audio from YouTube",
   category: "music",
-  use: ".play <song name>",
+  use: ".song <song name>",
   filename: __filename
 }, async (conn, mek, msg, { from, args, reply }) => {
   try {
