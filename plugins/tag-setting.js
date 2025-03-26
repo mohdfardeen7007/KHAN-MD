@@ -1,6 +1,6 @@
 const config = require('../config')
 const { cmd, commands } = require('../command')
-const { getBuffer, getGroupAdmins, getRandom, h2k, isUrl, Json, runtime, sleep, fetchJson} = require('../lib/functions')
+const { getBuffer, groupMetadata, getRandom, h2k, isUrl, Json, runtime, sleep, fetchJson} = require('../lib/functions')
 
 cmd({
     pattern: "tagall",
@@ -11,7 +11,7 @@ cmd({
     use: '.tagall',
     filename: __filename
 },
-async (conn, mek, m, { from, participants, reply, isGroup, senderNumber, groupadmins, prefix, command }) => {
+async (conn, mek, m, { from, participants, reply, isGroup, senderNumber, groupMetadata, prefix, command }) => {
     try {
         if (!isGroup) return reply("❌ This command can only be used in groups.");
         
