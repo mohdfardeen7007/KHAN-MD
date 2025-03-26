@@ -36,12 +36,7 @@ cmd({
       contextInfo: {
         mentionedJid: [sender, randomPair],
         forwardingScore: 999,
-        isForwarded: true,
-        forwardedNewsletterMessageInfo: {
-          newsletterJid: "120363354023106228@newsletter",
-          newsletterName: "JawadTechX",
-          serverMessageId: 143
-        }
+        isForwarded: true,     
       }
     });
 
