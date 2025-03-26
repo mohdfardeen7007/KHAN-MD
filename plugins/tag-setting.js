@@ -18,8 +18,6 @@ async (conn, mek, m, { from, participants, reply, isGroup, senderNumber, prefix,
         const botOwner = conn.user.id.split(":")[0]; // Extract bot owner's number
         const senderJid = senderNumber + "@s.whatsapp.net";
 
-        if (!groupAdmins.includes(senderJid) && senderNumber !== botOwner) {
-            return reply("❌ Only group admins or the bot owner can use this command.");
         }
 
         // Ensure group metadata is fetched properly
