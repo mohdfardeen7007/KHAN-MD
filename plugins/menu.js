@@ -315,11 +315,9 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
 ╰──────────────┈⊷
 > ${config.DESCRIPTION}`;
 
-        await conn.sendMessage(
-            from,
+        await conn.sendMessage( from, 
             { image: { url: `https://files.catbox.moe/7zfdcq.jpg` },
-            { quoted: mek }
-        );
+            { quoted: mek });
 
         // Send audio
         await conn.sendMessage(from, {
