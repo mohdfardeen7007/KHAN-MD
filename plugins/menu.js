@@ -1,11 +1,12 @@
-const config = require('../config');
+const config = require('../config')
 const { cmd, commands } = require('../command');
-const os = require("os");
-const { runtime } = require('../lib/functions');
-const axios = require('axios');
+const os = require("os")
+const {runtime} = require('../lib/functions')
+const axios = require('axios')
 
 cmd({
-    pattern: "menu",
+    pattern: "menu2",
+    alias: ["allmenu","fullmenu"],use: '.menu2',
     desc: "menu the bot",
     category: "menu",
     react: "⚡",
@@ -24,138 +25,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
 ┃★│ Version : *3.0.0 Bᴇᴛᴀ*
 ┃★╰──────────────
 ╰━━━━━━━━━━━━━━━┈⊷
-╭━━〔 *Menu List* 〕━━┈⊷
-┃◈╭─────────────·๏
-┃◈┃• Quranmenu
-┃◈┃• Prayertime
-┃◈┃• Aimenu
-┃◈┃• Anmiemenu
-┃◈┃• Reactions
-┃◈┃• Convertmenu
-┃◈┃• Funmenu
-┃◈┃• Dlmenu
-┃◈┃• Listcmd
-┃◈┃• Mainmenu
-┃◈┃• Groupmenu
-┃◈┃• Allmenu
-┃◈┃• Ownermenu
-┃◈┃• Othermenu
-┃◈┃• Logo <text>
-┃◈┃• Repo
-┃◈└───────────┈⊷
-╰──────────────┈⊷
-> ${config.DESCRIPTION}`;
-
-        await conn.sendMessage(
-            from,
-            {
-                image: { url: `https://files.catbox.moe/7zfdcq.jpg` },
-                caption: dec,
-                contextInfo: {
-                    mentionedJid: [m.sender],
-                    forwardingScore: 999,
-                    isForwarded: true,
-                    forwardedNewsletterMessageInfo: {
-                        newsletterJid: '120363354023106228@newsletter',
-                        newsletterName: 'JawadTechX',
-                        serverMessageId: 143
-                    }
-                }
-            },
-            { quoted: mek }
-        );
-
-        // Send audio
-        await conn.sendMessage(from, {
-            audio: { url: 'https://github.com/XdTechPro/KHAN-DATA/raw/refs/heads/main/autovoice/menunew.m4a' },
-            mimetype: 'audio/mp4',
-            ptt: true
-        }, { quoted: mek });
-        
-    } catch (e) {
-        console.log(e);
-        reply(`${e}`);
-    }
-});
-
-cmd({
-    pattern: "reactions",
-    desc: "Shows the reaction commands",
-    category: "menu",
-    react: "💫",
-    filename: __filename
-}, 
-async (conn, mek, m, { from, quoted, reply }) => {
-    try {
-        let dec = `╭━━〔 *Reactions Menu* 〕━━┈⊷
-┃◈╭─────────────·๏
-┃◈┃• bully @tag
-┃◈┃• cuddle @tag
-┃◈┃• cry @tag
-┃◈┃• hug @tag
-┃◈┃• awoo @tag
-┃◈┃• kiss @tag
-┃◈┃• lick @tag
-┃◈┃• pat @tag
-┃◈┃• smug @tag
-┃◈┃• bonk @tag
-┃◈┃• yeet @tag
-┃◈┃• blush @tag
-┃◈┃• smile @tag
-┃◈┃• wave @tag
-┃◈┃• highfive @tag
-┃◈┃• handhold @tag
-┃◈┃• nom @tag
-┃◈┃• bite @tag
-┃◈┃• glomp @tag
-┃◈┃• slap @tag
-┃◈┃• kill @tag
-┃◈┃• happy @tag
-┃◈┃• wink @tag
-┃◈┃• poke @tag
-┃◈┃• dance @tag
-┃◈┃• cringe @tag
-┃◈└───────────┈⊷
-╰──────────────┈⊷
-> ${config.DESCRIPTION}`;
-
-        await conn.sendMessage(
-            from,
-            {
-                image: { url: `https://files.catbox.moe/7zfdcq.jpg` },
-                caption: dec,
-                contextInfo: {
-                    mentionedJid: [m.sender],
-                    forwardingScore: 999,
-                    isForwarded: true,
-                    forwardedNewsletterMessageInfo: {
-                        newsletterJid: '120363354023106228@newsletter',
-                        newsletterName: 'JawadTechX',
-                        serverMessageId: 144
-                    }
-                }
-            },
-            { quoted: mek }
-        );
-
-    } catch (e) {
-        console.log(e);
-        reply(`${e}`);
-    }
-});
-
-// dlmenu
-
-cmd({
-    pattern: "dlmenu",
-    desc: "menu the bot",
-    category: "menu",
-    react: "⤵️",
-    filename: __filename
-}, 
-async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply }) => {
-    try {
-        let dec = `╭━━〔 *Download Menu* 〕━━┈⊷
+╭━━〔 *Download Menu* 〕━━┈⊷
 ┃◈╭─────────────·๏
 ┃◈┃• facebook
 ┃◈┃• mediafire
@@ -200,46 +70,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
 ┃◈┃• tiks
 ┃◈└───────────┈⊷
 ╰──────────────┈⊷
-> ${config.DESCRIPTION}`;
-
-        await conn.sendMessage(
-            from,
-            {
-                image: { url: `https://files.catbox.moe/qj853s.jpg` },
-                caption: dec,
-                contextInfo: {
-                    mentionedJid: [m.sender],
-                    forwardingScore: 999,
-                    isForwarded: true,
-                    forwardedNewsletterMessageInfo: {
-                        newsletterJid: '120363354023106228@newsletter',
-                        newsletterName: 'JawadTechX',
-                        serverMessageId: 143
-                    }
-                }
-            },
-            { quoted: mek }
-        );
-
-    } catch (e) {
-        console.log(e);
-        reply(`${e}`);
-    }
-});
-
-// group menu
-
-cmd({
-    pattern: "groupmenu",
-    desc: "menu the bot",
-    category: "menu",
-    react: "⤵️",
-    filename: __filename
-}, 
-async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply }) => {
-    try
-       {
-        let dec = `╭━━〔 *Group Menu* 〕━━┈⊷
+╭━━〔 *Group Menu* 〕━━┈⊷
 ┃◈╭─────────────·๏
 ┃◈┃• grouplink
 ┃◈┃• kickall
@@ -278,46 +109,59 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
 ┃◈┃• tagadmins
 ┃◈└───────────┈⊷
 ╰──────────────┈⊷
-> ${config.DESCRIPTION}`;
-
-        await conn.sendMessage(
-            from,
-            {
-                image: { url: `https://files.catbox.moe/pw7ap2.jpg` },
-                caption: dec,
-                contextInfo: {
-                    mentionedJid: [m.sender],
-                    forwardingScore: 999,
-                    isForwarded: true,
-                    forwardedNewsletterMessageInfo: {
-                        newsletterJid: '120363354023106228@newsletter',
-                        newsletterName: 'JawadTechX',
-                        serverMessageId: 143
-                    }
-                }
-            },
-            { quoted: mek }
-        );
-
-    } catch (e) {
-        console.log(e);
-        reply(`${e}`);
-    }
-});
-
-// fun menu
-
-cmd({
-    pattern: "funmenu",
-    desc: "menu the bot",
-    category: "menu",
-    react: "😎",
-    filename: __filename
-}, 
-async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply }) => {
-    try {
-
-        let dec = `╭━━〔 *Fun Menu* 〕━━┈⊷
+╭━━〔 *Reactions Menu* 〕━━┈⊷
+┃◈╭─────────────·๏
+┃◈┃• bully @tag
+┃◈┃• cuddle @tag
+┃◈┃• cry @tag
+┃◈┃• hug @tag
+┃◈┃• awoo @tag
+┃◈┃• kiss @tag
+┃◈┃• lick @tag
+┃◈┃• pat @tag
+┃◈┃• smug @tag
+┃◈┃• bonk @tag
+┃◈┃• yeet @tag
+┃◈┃• blush @tag
+┃◈┃• smile @tag
+┃◈┃• wave @tag
+┃◈┃• highfive @tag
+┃◈┃• handhold @tag
+┃◈┃• nom @tag
+┃◈┃• bite @tag
+┃◈┃• glomp @tag
+┃◈┃• slap @tag
+┃◈┃• kill @tag
+┃◈┃• happy @tag
+┃◈┃• wink @tag
+┃◈┃• poke @tag
+┃◈┃• dance @tag
+┃◈┃• cringe @tag
+┃◈└───────────┈⊷
+╰──────────────┈⊷
+╭━━〔 *Owner Menu* 〕━━┈⊷
+┃◈╭─────────────·๏
+┃◈┃• owner
+┃◈┃• menu
+┃◈┃• menu2
+┃◈┃• vv
+┃◈┃• listcmd
+┃◈┃• allmenu
+┃◈┃• repo
+┃◈┃• block
+┃◈┃• unblock
+┃◈┃• fullpp
+┃◈┃• setpp
+┃◈┃• restart
+┃◈┃• shutdown
+┃◈┃• updatecmd
+┃◈┃• alive
+┃◈┃• ping 
+┃◈┃• gjid
+┃◈┃• jid
+┃◈└───────────┈⊷
+╰──────────────┈⊷
+╭━━〔 *Fun Menu* 〕━━┈⊷
 ┃◈╭─────────────·๏
 ┃◈┃• shapar
 ┃◈┃• rate
@@ -345,45 +189,98 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
 ┃◈┃• poke
 ┃◈└───────────┈⊷
 ╰──────────────┈⊷
-> ${config.DESCRIPTION}`;
-
-        await conn.sendMessage(
-            from,
-            {
-                image: { url: `https://files.catbox.moe/l7evmf.jpg` },
-                caption: dec,
-                contextInfo: {
-                    mentionedJid: [m.sender],
-                    forwardingScore: 999,
-                    isForwarded: true,
-                    forwardedNewsletterMessageInfo: {
-                        newsletterJid: '120363354023106228@newsletter',
-                        newsletterName: 'JawadTechX',
-                        serverMessageId: 143
-                    }
-                }
-            },
-            { quoted: mek }
-        );
-
-    } catch (e) {
-        console.log(e);
-        reply(`${e}`);
-    }
-});
-
-// other menu
-
-cmd({
-    pattern: "othermenu",
-    desc: "menu the bot",
-    category: "menu",
-    react: "🤖",
-    filename: __filename
-}, 
-async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply }) => {
-    try {
-        let dec = `╭━━〔 *Other Menu* 〕━━┈⊷
+╭━━〔 *Convert Menu* 〕━━┈⊷
+┃◈╭─────────────·๏
+┃◈┃• sticker
+┃◈┃• sticker2
+┃◈┃• emojimix
+┃◈┃• fancy
+┃◈┃• take
+┃◈┃• tomp3
+┃◈┃• tts
+┃◈┃• trt
+┃◈┃• base64
+┃◈┃• unbase64
+┃◈┃• binary
+┃◈┃• dbinary
+┃◈┃• tinyurl
+┃◈┃• urldecode
+┃◈┃• urlencode
+┃◈┃• url
+┃◈┃• repeat 
+┃◈┃• ask
+┃◈┃• readmore
+┃◈└───────────┈⊷
+╰──────────────┈⊷
+╭━━〔 *Ai Menu* 〕━━┈⊷
+┃◈╭─────────────·๏
+┃◈┃• ai
+┃◈┃• gpt3
+┃◈┃• gpt2
+┃◈┃• gptmini
+┃◈┃• gpt
+┃◈┃• meta
+┃◈┃• blackbox
+┃◈┃• luma
+┃◈┃• dj 
+┃◈┃• khan
+┃◈┃• jawad
+┃◈┃• gpt4
+┃◈┃• bing
+┃◈┃• imagine 
+┃◈┃• imagine2
+┃◈┃• copilot
+┃◈└───────────┈⊷
+╰──────────────┈⊷
+╭━━〔 *Main Menu* 〕━━┈⊷
+┃◈╭─────────────·๏
+┃◈┃• ping
+┃◈┃• ping2
+┃◈┃• speed
+┃◈┃• live 
+┃◈┃• alive
+┃◈┃• runtime
+┃◈┃• uptime 
+┃◈┃• repo
+┃◈┃• owner
+┃◈┃• menu
+┃◈┃• menu2
+┃◈┃• restart
+┃◈└───────────┈⊷
+╰──────────────┈⊷
+╭━━〔 *Anime Menu* 〕━━┈⊷
+┃◈╭─────────────·๏
+┃◈┃• fack
+┃◈┃• truth
+┃◈┃• dare
+┃◈┃• dog
+┃◈┃• awoo
+┃◈┃• garl
+┃◈┃• waifu
+┃◈┃• neko
+┃◈┃• megnumin
+┃◈┃• neko
+┃◈┃• maid
+┃◈┃• loli
+┃◈┃• animegirl
+┃◈┃• animegirl
+┃◈┃• animegirl1
+┃◈┃• animegirl2
+┃◈┃• animegirl3
+┃◈┃• animegirl4
+┃◈┃• animegirl5
+┃◈┃• anime1
+┃◈┃• anime1
+┃◈┃• anime2
+┃◈┃• anime3
+┃◈┃• anime4
+┃◈┃• anime5
+┃◈┃• animenews
+┃◈┃• foxgirl
+┃◈┃• naruto
+┃◈└───────────┈⊷
+╰──────────────┈⊷
+╭━━〔 *Other Menu* 〕━━┈⊷
 ┃◈╭─────────────·๏
 ┃◈┃• timenow
 ┃◈┃• date
@@ -421,7 +318,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
         await conn.sendMessage(
             from,
             {
-                image: { url: `https://files.catbox.moe/1re1b8.jpg` },
+                image: { url: `https://files.catbox.moe/7zfdcq.jpg` },
                 caption: dec,
                 contextInfo: {
                     mentionedJid: [m.sender],
@@ -437,306 +334,13 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
             { quoted: mek }
         );
 
-    } catch (e) {
-        console.log(e);
-        reply(`${e}`);
-    }
-});
-
-// main menu
-
-cmd({
-    pattern: "mainmenu",
-    desc: "menu the bot",
-    category: "menu",
-    react: "🗿",
-    filename: __filename
-}, 
-async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply }) => {
-    try {
-        let dec = `╭━━〔 *Main Menu* 〕━━┈⊷
-┃◈╭─────────────·๏
-┃◈┃• ping
-┃◈┃• live 
-┃◈┃• alive
-┃◈┃• runtime
-┃◈┃• uptime 
-┃◈┃• repo
-┃◈┃• owner
-┃◈┃• menu
-┃◈┃• menu2
-┃◈┃• restart
-┃◈└───────────┈⊷
-╰──────────────┈⊷
-> ${config.DESCRIPTION}`;
-
-        await conn.sendMessage(
-            from,
-            {
-                image: { url: `https://files.catbox.moe/ebaiwa.jpg` },
-                caption: dec,
-                contextInfo: {
-                    mentionedJid: [m.sender],
-                    forwardingScore: 999,
-                    isForwarded: true,
-                    forwardedNewsletterMessageInfo: {
-                        newsletterJid: '120363354023106228@newsletter',
-                        newsletterName: 'JawadTechX',
-                        serverMessageId: 143
-                    }
-                }
-            },
-            { quoted: mek }
-        );
-
-    } catch (e) {
-        console.log(e);
-        reply(`${e}`);
-    }
-});
-
-// owner menu
-
-cmd({
-    pattern: "ownermenu",
-    desc: "menu the bot",
-    category: "menu",
-    react: "🔰",
-    filename: __filename
-}, 
-async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply }) => {
-    try {
-        let dec = `╭━━〔 *Owner Menu* 〕━━┈⊷
-┃◈╭─────────────·๏
-┃◈┃• owner
-┃◈┃• menu
-┃◈┃• menu2
-┃◈┃• listcmd
-┃◈┃• allmenu
-┃◈┃• repo
-┃◈┃• block
-┃◈┃• unblock
-┃◈┃• fullpp
-┃◈┃• setpp
-┃◈┃• restart
-┃◈┃• shutdown
-┃◈┃• updatecmd
-┃◈┃• alive
-┃◈┃• ping 
-┃◈┃• gjid
-┃◈┃• jid
-┃◈└───────────┈⊷
-╰──────────────┈⊷
-> ${config.DESCRIPTION}`;
-
-        await conn.sendMessage(
-            from,
-            {
-                image: { url: `https://files.catbox.moe/pv2zy7.jpg` },
-                caption: dec,
-                contextInfo: {
-                    mentionedJid: [m.sender],
-                    forwardingScore: 999,
-                    isForwarded: true,
-                    forwardedNewsletterMessageInfo: {
-                        newsletterJid: '120363354023106228@newsletter',
-                        newsletterName: 'JawadTechX',
-                        serverMessageId: 143
-                    }
-                }
-            },
-            { quoted: mek }
-        );
-
-    } catch (e) {
-        console.log(e);
-        reply(`${e}`);
-    }
-});
-
-// convert menu
-
-cmd({
-    pattern: "convertmenu",
-    desc: "menu the bot",
-    category: "menu",
-    react: "🥀",
-    filename: __filename
-}, 
-async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply }) => {
-    try {
-        let dec = `╭━━〔 *Convert Menu* 〕━━┈⊷
-┃◈╭─────────────·๏
-┃◈┃• sticker
-┃◈┃• sticker2
-┃◈┃• emojimix
-┃◈┃• fancy
-┃◈┃• take
-┃◈┃• tomp3
-┃◈┃• tts
-┃◈┃• trt
-┃◈┃• base64
-┃◈┃• unbase64
-┃◈┃• binary
-┃◈┃• dbinary
-┃◈┃• tinyurl
-┃◈┃• urldecode
-┃◈┃• urlencode
-┃◈┃• url
-┃◈┃• repeat 
-┃◈┃• ask
-┃◈┃• readmore
-┃◈└───────────┈⊷
-╰──────────────┈⊷
-> ${config.DESCRIPTION}`;
-
-        await conn.sendMessage(
-            from,
-            {
-                image: { url: `https://files.catbox.moe/slc08b.jpg` },
-                caption: dec,
-                contextInfo: {
-                    mentionedJid: [m.sender],
-                    forwardingScore: 999,
-                    isForwarded: true,
-                    forwardedNewsletterMessageInfo: {
-                        newsletterJid: '120363354023106228@newsletter',
-                        newsletterName: 'JawadTechX',
-                        serverMessageId: 143
-                    }
-                }
-            },
-            { quoted: mek }
-        );
-
-    } catch (e) {
-        console.log(e);
-        reply(`${e}`);
-    }
-});
-
-
-// anmie menu 
-
-cmd({
-    pattern: "animemenu",
-    desc: "menu the bot",
-    category: "menu",
-    react: "🧚",
-    filename: __filename
-}, 
-async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply }) => {
-    try {
-          let dec = `╭━━〔 *Anime Menu* 〕━━┈⊷
-┃◈╭─────────────·๏
-┃◈┃• fack
-┃◈┃• dog
-┃◈┃• awoo
-┃◈┃• garl
-┃◈┃• waifu
-┃◈┃• neko
-┃◈┃• megnumin
-┃◈┃• neko
-┃◈┃• maid
-┃◈┃• loli
-┃◈┃• animegirl
-┃◈┃• animegirl
-┃◈┃• animegirl1
-┃◈┃• animegirl2
-┃◈┃• animegirl3
-┃◈┃• animegirl4
-┃◈┃• animegirl5
-┃◈┃• anime1
-┃◈┃• anime1
-┃◈┃• anime2
-┃◈┃• anime3
-┃◈┃• anime4
-┃◈┃• anime5
-┃◈┃• animenews
-┃◈┃• foxgirl
-┃◈┃• naruto
-┃◈└───────────┈⊷
-╰──────────────┈⊷
-> ${config.DESCRIPTION}`;
-
-        await conn.sendMessage(
-            from,
-            {
-                image: { url: `https://files.catbox.moe/ezhijd.jpg` },
-                caption: dec,
-                contextInfo: {
-                    mentionedJid: [m.sender],
-                    forwardingScore: 999,
-                    isForwarded: true,
-                    forwardedNewsletterMessageInfo: {
-                        newsletterJid: '120363354023106228@newsletter',
-                        newsletterName: 'JawadTechX',
-                        serverMessageId: 143
-                    }
-                }
-            },
-            { quoted: mek }
-        );
-
-    } catch (e) {
-        console.log(e);
-        reply(`${e}`);
-    }
-});
-
-
-// ai menu 
-
-cmd({
-    pattern: "aimenu",
-    desc: "menu the bot",
-    category: "menu",
-    react: "🤖",
-    filename: __filename
-}, 
-async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply }) => {
-    try {
-        let dec = `╭━━〔 *Ai Menu* 〕━━┈⊷
-┃◈╭─────────────·๏
-┃◈┃• ai
-┃◈┃• gpt3
-┃◈┃• gpt2
-┃◈┃• gptmini
-┃◈┃• gpt
-┃◈┃• meta
-┃◈┃• blackbox
-┃◈┃• luma
-┃◈┃• dj 
-┃◈┃• khan
-┃◈┃• jawad
-┃◈┃• gpt4
-┃◈┃• bing
-┃◈┃• imagine 
-┃◈┃• imagine2
-┃◈┃• copilot
-┃◈└───────────┈⊷
-╰──────────────┈⊷
-> ${config.DESCRIPTION}`;
-
-        await conn.sendMessage(
-            from,
-            {
-                image: { url: `https://files.catbox.moe/90oj1t.jpg` },
-                caption: dec,
-                contextInfo: {
-                    mentionedJid: [m.sender],
-                    forwardingScore: 999,
-                    isForwarded: true,
-                    forwardedNewsletterMessageInfo: {
-                        newsletterJid: '120363354023106228@newsletter',
-                        newsletterName: 'JawadTechX',
-                        serverMessageId: 143
-                    }
-                }
-            },
-            { quoted: mek }
-        );
-
+        // Send audio
+        await conn.sendMessage(from, {
+            audio: { url: 'https://github.com/XdTechPro/KHAN-DATA/raw/refs/heads/main/autovoice/menunew.m4a' },
+            mimetype: 'audio/mp4',
+            ptt: true
+        }, { quoted: mek });
+        
     } catch (e) {
         console.log(e);
         reply(`${e}`);
